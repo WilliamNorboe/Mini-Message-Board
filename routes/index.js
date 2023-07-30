@@ -15,6 +15,17 @@ const messages = [
   }
 ];
 
+router.get('/new', function(req, res, next) {
+  res.render('form', { title: 'Express', messages: messages });
+});
+
+router.post('/new', function(req, res, next) {
+  let author = req.body.authorName;
+  let newMessage = req.body.newMessage;
+  messages.push({text: newMessage, user: author, added: new Date()});
+  res.redirect('/');
+});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express', messages: messages });
