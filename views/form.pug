@@ -2,7 +2,7 @@ extends layout
 
 block content
   h1 New Message
-  form(action='/new', method='POST')
+  form.create(action='/new', method='POST')
     label(for='authorName') Author Name:
     input.authorName(name='authorName', type='text')
     label(for='newMessage') Message:

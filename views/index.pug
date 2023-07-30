@@ -3,5 +3,7 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  each val in messages
-    li.message= val.text
+  ul.messages
+    each val in messages
+      li.message= val.text
+  button#newMessage New Message
